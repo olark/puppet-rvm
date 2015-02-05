@@ -16,6 +16,7 @@ class rvm::system($version=undef) {
     require => [
       Class['rvm::dependencies'],
     ],
+    unless => "test -f /usr/local/rvm/bin/rvm"
   }
 
   # the fact won't work until rvm is installed before puppet starts
